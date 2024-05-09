@@ -1,13 +1,347 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    background-color: white;
+    color: rgb(64, 64, 64);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+.wrapper {
+
+
+    width: 1280px;
+    margin: 50px auto;
+
+
+}
+
+
+
+header .logo {
+ 
+    font-weight: 600;
+    font-size: 20px;
+    position: relative;
+
+}
+
+.carro-boton{
+    cursor: pointer;
+    transition: color, transform, 500ms ease;
+
+
+}
+
+.carro-boton:hover
+{
+    color: burlywood;
+   
+    
+}
+
+.contenedor-carro-boton{
+    display: flex; gap: 3px;
+}
+
+.contenedor-carro-boton.active{
+    color: burlywood;
+    transform: scale(1.5);
+}
+
+.carro-boton.active{
+     color: burlywood;
+     transform: scale(1.5);
+}
+
+.carro-contenedor{
+    position: absolute;
+    top: 70px;
+
+    width: 370px;
+    min-height: 100px;
+    background: #fafafa;
+    z-index: 1000;
+    box-shadow: 0px 1px 10px 2px rgb(241, 240, 240);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carro-contenedor .item {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    gap: 10px;
+ 
+
+}
+
+.delete-icon{
+    color: rgb(224, 81, 81);
+    margin-right: 10%;
+
+
+}
+
+.contenedor-carro-precio{
+    display: flex;
+    justify-content:space-between;
+}
+
+.delete-icon:hover{
+    color: rgb(207, 4, 4);
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.carro-contenedor .empty  {
+    width: 100%;
+    height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+}
+
+.contenedor-carro-prod-img{
+    width: 50%;
+}
+
+.contenedor-carro-prod-img>img {
+    width: 100%;
+    box-shadow: 0px 1px 10px 2px rgb(20, 19, 19);
+    border-radius: 10px 10px 0 0;
+}
+
+.suma{
+    width: 100%;
+    height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+   font-weight: 600;
+   font-size: 20px;
+   box-shadow: 0px 1px 10px 2px rgb(215, 188, 188);
+   cursor: pointer;
+ 
+
+
+   
+}
+
+
+
+.contenedor-carro-texto{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  
+
+}
+.contenedor-carro-texto h2 {
+    font-size: 15px;
+}
+
+.imagen-contenedor-logo{
+    margin: 50px 0;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+ 
+}
+
+.imagen-contenedor-logo>img {
+    height: 100%;
+    width: 100%;
+}
+
+#logo-contenedor{
+    position: relative;
+}
+
+.text-logo-contenedor{
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 1px 10px 2px rgb(1, 1, 1);
+}
+
+.text-logo-contenedor>h1 {
+
+    box-shadow: 0px 1px 10px 2px rgb(241, 240, 240);
+    font-size: 50px;
+}
+
+#contenedor-nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#contenedor-botones-nav{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#contenedor-nav span {
+    height: 30px
+}
+
+#contenedor-nav span:hover {
+ opacity: 0.5;
+ cursor: pointer;
+
+}
+
+main{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.categories div {
+
+    display: inline-block;
+    background-color: #f2f2f2 ;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 500ms ease;
+}
+
+.categories div:hover {
+    border-color: silver;
+    box-shadow: 0px 1px 10px 2px rgb(2, 2, 2);
+    transform: scale(1.1);
+    
+
+}
+
+.categories > div.active {
+    border-color: silver;
+    box-shadow: 0px 1px 10px 2px rgb(2, 2, 2);
+    transform: scale(1.5);
+} 
+
+
+
+main .producto{
+    width: 30%;
+    margin-bottom: 50px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    
+
+
+    padding-bottom: 20px;
+}
+
+.contenedor-prod-img{
+    width: 100% ;
+}
+
+.contenedor-prod-img > img {
+   border-radius: 10px 10px 0 0  ;
+    width: 100%;
+    transition: transform 500ms ease ;
+    cursor: pointer;
+}
+
+.contenedor-prod-img :hover {
+
+    transform: scale(1.05);
+
+}
+
+main h2, .full-item, main p{
+    margin: 10px 20px;
+    color: #333;
+    
+} 
+
+main b, .full-item b {
+    color: rgb(6, 76, 6);
+
+   
+    
+   
+}
+
+main .to-carro{
+
+
+
+
+}
+
+main .to-carro :hover {
+    
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.contenedor-precio {
+    display: flex;
+    width: 100%;
+    margin: 0px 20px;
+    justify-content: space-between;
+}
+
+.full-item .to-carro :hover {
+    
+    transform: scale(1.2);
+    cursor: pointer;
+}
+ 
+.full-item {
+    position:fixed;
+    top:0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000df;
+    z-index: 999;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.full-item > div {
+    width: 30%;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
 }
